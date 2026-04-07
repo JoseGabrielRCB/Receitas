@@ -1,17 +1,17 @@
 {% include "recipes/partials/head.html" %}
 
 <body>
-  <header class="main-header-conteiner">
-    <div class ="main-header conteiner">
-     <h1>
-       <a class="main-logo" href="/" >
-         <i <i class="fa-solid fa-kitchen-set main-logo-icon"></i>
-         <span class="main-logo-text">Receitas</span>
-      </a>
-    </h1>
+  {%include "recipes/partials/header.html" %}
+  <div class="search-conteiner">
+    <div class="conteiner">
+      <form action="" class="search-form">
+        <input type="search" class="search-input" name="search" placeholder="Pesquise por uma receita">
+        <button type="submit" class="search-button">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+    </div>
   </div>
-  </header>
-
 </body>
 
 </html>
