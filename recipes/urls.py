@@ -16,8 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path , include
-from .views import home
+from . import views
 
 urlpatterns = [
-    path('',home),
+    path('',views.home),
+    path('recipes/<int:id>/',views.recipe),
 ]
+
+
+# path('recipes/<id>/',views.recipe) captura dnnamicamente os valores recipes/1..2..3....
+# nescessário atulizar parametro em views 
+
+# https://docs.djangoproject.com/en/6.0/topics/http/urls/
