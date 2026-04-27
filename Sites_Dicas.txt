@@ -1,2 +1,8 @@
 https://placehold.co/1280x720/0000FF/FFFFFF.png  PAra molde de imagens
 https://fontawesome.com/icons/eye?f=classic&s=solid Icones
+
+
+Api riot :
+https://ddragon.leagueoflegends.com/cdn/14.24.1/data/en_US/champion/Briar.json --> Champs e seus dados
+
+https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Briar.jpg --> Splash de skins
