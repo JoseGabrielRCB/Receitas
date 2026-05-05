@@ -192,6 +192,12 @@ box-shadow: -8px 8px 18px rgb(0, 0, 0, .25);
 .recipe-title-conteiner {
 padding: var(--spacing-gutter-medium);
 padding-bottom: 2rem;
+
+}
+
+.recipe-title-conteiner a{
+  text-decoration: none;
+  color: var(--color-primary-dark);
 }
 
 .recipe-author {
@@ -282,5 +288,9 @@ box-shadow: -5px 5px 15px rgb(0, 0, 0, .2);
 
 .main-footer a:hover {
   filter: brightness(0.8);
+}
+
+.preparation-steps{
+  padding: var(--spacing-gutter-medium);
 }
 

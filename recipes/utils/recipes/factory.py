@@ -20,6 +20,7 @@ def make_recipe():
     RandonSkin= choice(BRIAR_SKINS)
     UrlSkin = f'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Briar_{RandonSkin}.jpg'
     return {
+        'id' : randint(1,100),
         'title': fake.sentence(nb_words=6),
         'description': fake.sentence(nb_words=20),
         'preparation_time': fake.random_number(digits=2, fix_len=True),
