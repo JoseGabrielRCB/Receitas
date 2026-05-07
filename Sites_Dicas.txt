@@ -6,3 +6,9 @@ Api riot :
 https://ddragon.leagueoflegends.com/cdn/14.24.1/data/en_US/champion/Briar.json --> Champs e seus dados
 
 https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Briar.jpg --> Splash de skins
+
+Comandos:
+
+migrate -> aplicar mudanças de models
+makemaigrations -> Aplica as migrações
+migrate -> Aplicar na base de dados
