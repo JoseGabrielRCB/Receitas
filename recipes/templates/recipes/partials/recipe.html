@@ -1,13 +1,13 @@
 <div class="recipe recipe-list-iten">
         <div class="recipe-cover">
-          <a href='{% url 'recipes-recipe' recipes.id %}'>
+          <a href='{% url 'recipes:recipe' recipes.id %}'>
           <img src={{recipes.cover.url}}
                alt="temporario">
           </a>
         </div>
         <div class="recipe-title-conteiner">
           <h2 class="recipe-title">
-            <a href='{% url 'recipes-recipe' recipes.id %}'>
+            <a href='{% url 'recipes:recipe' recipes.id %}'>
               {{recipes.title}}
             </a>
           </h2>
@@ -63,7 +63,7 @@
         <!--Fim bottom card--> 
         {% if is_detail_page is not True  %}
         <footer class="recipe-footer">
-          <a href="/recipes/3/" class="recipe-read-more button button-dark button-full-width">
+          <a href='{% url 'recipes:recipe' recipes.id %}' class="recipe-read-more button button-dark button-full-width">
             <i class="fa-solid fa-eye"></i>
             <span>ver mais...</span>
           </a>
