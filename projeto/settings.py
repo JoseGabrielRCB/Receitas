@@ -124,3 +124,6 @@ STATIC_URL = 'static/'
 STATIC_ROOT= os.path.join(BASE_DIR,'static')    #python3 manage.py collectstatic
 STATICFILES_DIRS = [] #No momento le automaticamente  APENAS do django padrão
                         #ignora base_static
+
+MEDIA_URL ='/media/'
+MEDIA_ROOT = BASE_DIR /'media'

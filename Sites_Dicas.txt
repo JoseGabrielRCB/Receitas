@@ -12,3 +12,47 @@ Comandos:
 migrate -> aplicar mudanças de models
 makemaigrations -> Aplica as migrações
 migrate -> Aplicar na base de dados
+
+
+Shell :
+--> https://docs.djangoproject.com/en/6.0/ref/models/querysets/
+--> Ao puxar os objetos , sempre está usando referencia
+--> Django Shell funciona no modo lazy, não adiciona NADA no BD a menos que voce force ele [OBJECT.save()]
+MODELS_NAME.objects[FUNÇÃO]
+order_by
+all
+get(id=?) #Erro para valor id invalido
+filter(id=?) | (id>?)
+---
+VAR.delete() #exclui instantaneamente por referencia sem .save
+
+
+>>> for recipe in recipes: print(recipe.id,recipe.title)
+... 
+1 Carne de Monstro
+2 Almondega Monstruosa
+3 Almondega-Monster
+4 Brooke
+5 HTML RECEITA
+>>> for recipe in recipes.order_by('-id'): print(recipe.id,recipe.title)
+... 
+5 HTML RECEITA
+4 Brooke
+3 Almondega-Monster
+2 Almondega Monstruosa
+1 Carne de Monstro
+
+REMOVENDO QuerySet :
+
+>>> one_recipe = recipes.order_by('-id')
+>>> print(one_recipe)
+<QuerySet [<Recipe: HTML RECEITA>, <Recipe: Brooke>, <Recipe: Almondega-Monster>, <Recipe: Almondega Monstruosa>, <Recipe: Carne de Monstro>]>
+>>> one_recipe = recipes.order_by('-id').first() #deixa de ser um interavel (QuerySet)
+>>> print(one_recipe)
+HTML RECEITA
+
+VENDO CAMPOS _meta:
+>>> one_recipe._meta.get_fields()
+(<django.db.models.fields.BigAutoField: id>, <django.db.models.fields.CharField: title>, <django.db.models.fields.SlugField: slug>, <django.db.models.fields.CharField: descipition>, <django.db.models.fields.CharField: serving>, <django.db.models.fields.CharField: servings_unit>, <django.db.models.fields.CharField: preparation_time_unit>, <django.db.models.fields.BooleanField: preparation_time_is_html>, <django.db.models.fields.TextField: preparation_steps>, <django.db.models.fields.DateTimeField: creat_at>, <django.db.models.fields.DateTimeField: updated_at>, <django.db.models.fields.BooleanField: is_published>, <django.db.models.fields.files.ImageField: cover>, <django.db.models.fields.related.ForeignKey: Category>, <django.db.models.fields.related.ForeignKey: author>)
+>>> one_recipe._meta.get_fields()[0]
+<django.db.models.fields.BigAutoField: id>

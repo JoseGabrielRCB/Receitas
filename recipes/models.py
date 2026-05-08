@@ -9,6 +9,9 @@ from django.contrib.auth.models import User
 class Category(models.Model):
     name = models.CharField(max_length=50)
 
+    def __str__(self):
+        return self.name
+
 
 class Recipe(models.Model):
     #Campos Base
@@ -29,3 +32,6 @@ class Recipe(models.Model):
     # Relacoes
     Category= models.ForeignKey(Category,on_delete=models.SET_NULL,null=True) # Caso seja deletado, seta como NULL
     author = models.ForeignKey(User,on_delete=models.SET_NULL,null = True)
+
+    def __str__(self):
+        return self.title
